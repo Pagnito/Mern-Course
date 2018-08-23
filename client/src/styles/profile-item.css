@@ -1,0 +1,109 @@
+.profileItem {
+	width: 70%;
+	height: 150px;
+	box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.5);
+	background-color: #fffdf8;
+	display: flex;
+	font-family: 'josefin sans';
+	margin: 5px;
+}
+.proItemAvatarImg {
+	max-width: 90px;
+	max-height: 90px;
+	border-radius: 50px;
+}
+
+.proItemName {
+	margin-bottom: 5px;
+}
+.flexForInfo1 {
+	display: flex;
+}
+.proItemAvatarWrap {
+	width: 25%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.proItemAvatar {
+	height: 75%;
+	display: flex;
+	align-items: center;
+}
+.proItemStatus {
+	font-size: 30px;
+
+	margin: 10px 10px 0 10px;
+}
+.flexForStatus {
+	width: 40%;
+	display: flex;
+	flex-direction: column;
+}
+.proItemCompany {
+	font-size: 20px;
+	margin-top: 15px;
+}
+.proItemName {
+	font-size: 20px;
+}
+
+.proItemField {
+	margin-top: 10px;
+}
+.proItemSocial {
+	display: flex;
+}
+.proItemSocialIcon {
+	padding-left: 5px;
+	font-size: 25px;
+	margin: 5px 20px 0px 5px;
+}
+.proItemSocialIcon:hover {
+	transform: scale(1.1);
+	cursor: pointer;
+}
+.proItemInfoWrap {
+	display: flex;
+	width: 75%;
+}
+.proItemInfo1 {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	overflow: hidden;
+}
+
+.proItemInfo2 {
+	padding-bottom: 10px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	width: 60%;
+	justify-content: space-between;
+}
+.proItemBio {
+	margin-top: 10px;
+	padding: 10px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.fa-eye {
+	font-size: 25px;
+	margin: 10px;
+	cursor: pointer;
+	height: 10%;
+	animation: shine 1.5s ease-out 0s alternate infinite none running;
+}
+.fa-eye:hover {
+	transform: scaleY(1.1);
+}
+@keyframes shine {
+	0% {
+		color: black;
+	}
+	100% {
+		color: #f9bb6d;
+	}
+}

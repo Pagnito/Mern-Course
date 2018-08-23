@@ -1,0 +1,63 @@
+.logged-header {
+	background: #ffefba; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #ffefba, #ffffff); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #ffefba, #ffffff);
+	height: 100px !important;
+	width: 100%;
+	position: fixed;
+	display: flex;
+	overflow: hidden;
+	box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.2);
+}
+.matrixPattern {
+	transform: rotate(90deg);
+	font-size: 10px;
+	color: rgba(237, 221, 173, 0.3);
+	/*color: rgba(255, 255, 255, 0.5);*/
+	position: absolute;
+}
+#matrixPattern {
+	height: 80px;
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	display: flex;
+	z-index: 1;
+}
+.logged-logo {
+	color: #f9bb6d;
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+	z-index: 2;
+}
+.logged-nav > ul > li {
+	color: black !important;
+}
+.logged-nav {
+	z-index: 2;
+}
+.userInfoo {
+	display: flex;
+	height: 60px;
+	z-index: 4;
+}
+.proPic {
+	height: 50px;
+	width: 50px;
+	border-radius: 50px;
+}
+.align-vert {
+	display: flex;
+	flex-direction: column;
+}
+.userName {
+	display: flex;
+	align-items: center;
+	margin-right: 10px;
+	margin-bottom: 5px;
+	font-family: 'Bowlby one sc';
+	color: rgba(0, 0, 0, 0.5);
+}
+.logged-nav > ul > li:hover {
+	transition: all 0.3s ease-out !important;
+	color: #efe1b1 !important;
+}

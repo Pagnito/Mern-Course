@@ -1,0 +1,104 @@
+.login {
+	background: #ffefba; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to top, #ffffff, #ffefba); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to top, #ffffff, #ffefba);
+
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	min-height: 100vh;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+#loginBoxWrapper {
+	width: 30%;
+	display: flex;
+}
+input:-webkit-autofill {
+	background-color: red !important;
+}
+.form-group {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+.form-group-hor {
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+	width: 101%;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	box-sizing: border-box;
+
+	font-family: 'josefin sans';
+}
+.form-input {
+	height: 30px;
+	width: 101%;
+	background-color: transparent;
+	border: none !important;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background-color: transparent;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.5) !important;
+	font-size: 20px;
+	outline: none;
+	padding-left: 10px;
+	box-sizing: border-box;
+	font-family: 'josefin sans';
+}
+.form-btn {
+	background-color: transparent;
+	color: #ffefbb;
+	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.6);
+	height: 30px;
+	font-size: 15px;
+	width: 100%;
+	outline: none;
+	color: black;
+	border: none;
+	font-family: 'josefin sans';
+}
+.form-btn:hover {
+	transition: all 0.2s ease-in;
+	background-color: #e0f794;
+	cursor: pointer;
+}
+.form-group > label {
+	color: black;
+	font-family: 'josefin sans';
+}
+.googleBtn:hover {
+	transition: all 0.2s ease-in;
+	background-color: #ff6060;
+	cursor: pointer;
+}
+.googleBtn {
+	width: 101%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	height: 30px;
+	margin-top: 5px;
+	background-color: transparent;
+	border: none;
+	color: #ffefbb;
+	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.6);
+	color: black !important;
+}
+
+@media (min-width: 700px) and (max-width: 1000px) {
+	#loginBoxWrapper {
+		width: 50%;
+	}
+}
+@media (max-width: 700px) {
+	#loginBoxWrapper {
+		width: 90%;
+	}
+}

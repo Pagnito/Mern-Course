@@ -1,0 +1,104 @@
+.logo-stns {
+	width: 20%;
+	height: 100%;
+	display: flex;
+	box-sizing: border-box;
+	color: white;
+	font-family: 'Audiowide';
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 40px;
+	background-color: gold;
+}
+.nav-btn-stns {
+	display: flex;
+	background-color: #b3f442;
+	height: 100%;
+	padding-left: 20px;
+	padding-right: 20px;
+	box-sizing: border-box;
+}
+.header {
+	display: flex;
+	height: 60px;
+}
+.nav-btns > ul > li {
+	list-style-type: none;
+	color: black;
+	display: inline;
+	font-family: 'Josefin sans';
+	font-size: 20px;
+	margin: 10px;
+	cursor: pointer;
+}
+.nav-btns > ul {
+	margin: 0;
+	padding: 0;
+}
+
+.reverse-order {
+	display: flex;
+	align-items: flex-end;
+	flex-direction: row-reverse;
+}
+.vert-center {
+	display: flex;
+	align-items: center;
+}
+.vert-bot {
+	display: flex;
+	align-items: flex-end;
+}
+.vert-top {
+	display: flex;
+	align-items: flex-start;
+}
+.hor-center {
+	display: flex;
+	justify-content: center;
+}
+.hor-left {
+	display: flex;
+	justify-content: flex-start;
+}
+.hor-right {
+	display: flex;
+	justify-content: flex-end;
+}
+.bg-stretch-1 {
+	width: 10vw !important;
+}
+.bg-stretch-2 {
+	width: 20vw !important;
+}
+.bg-stretch-3 {
+	width: 30vw !important;
+}
+.bg-stretch-4 {
+	width: 40vw !important;
+}
+.bg-stretch-5 {
+	width: 50vw !important;
+}
+.bg-stretch-6 {
+	width: 60vw !important;
+}
+.bg-stretch-7 {
+	width: 70vw !important;
+}
+.bg-stretch-8 {
+	width: 80vw !important;
+}
+.bg-stretch-9 {
+	min-width: 90vw !important;
+}
+.bg-stretch-10 {
+	width: 100vw !important;
+}
+
+.no-padding {
+	padding: 0 !important;
+}
+.fixed {
+	position: fixed;
+}

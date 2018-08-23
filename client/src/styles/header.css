@@ -1,0 +1,44 @@
+.logo-stns {
+	background-color: transparent !important;
+}
+input:-webkit-autofill {
+	-webkit-box-shadow: inset 0 0 0px 999px white;
+}
+.logo {
+	cursor: default;
+}
+#logoLink {
+	color: white;
+	color: #f9bb6d;
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+	z-index: 2;
+}
+.nav-btn-stns {
+	background-color: transparent !important;
+	z-index: 2;
+}
+.non-log-btns {
+	margin-bottom: 10px !important;
+}
+.nav-btns > ul > li:hover {
+	transition: all 0.3s ease-out;
+	color: #efe1b1 !important;
+}
+.header {
+	background: #ffefba; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #ffefba, #ffffff); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #ffefba, #ffffff);
+	height: 95px !important;
+	position: fixed;
+	top: 0px !important;
+	overflow: hidden;
+	box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 550px) {
+	.logo {
+		font-size: 30px !important;
+	}
+	.nav-btns > ul > li {
+		font-size: 15px !important;
+	}
+}

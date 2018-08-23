@@ -1,0 +1,18 @@
+.register {
+	background: #ffefba; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to top, #ffffff, #ffefba); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to top, #ffffff, #ffefba);
+
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	min-height: 100vh;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+.form-input::placeholder {
+	color: #ef6b53;
+	font-size: 15px;
+}

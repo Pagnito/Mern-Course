@@ -1,0 +1,104 @@
+.warningPlaceholder::placeholder {
+	color: red;
+}
+.editAvatarPart {
+	justify-content: center;
+}
+.editUserName {
+	margin-top: 20px;
+	font-family: 'josefin sans';
+	font-size: 30px;
+	text-align: center;
+	border: none;
+	border-bottom: 1px solid black;
+	outline: none;
+	max-width: 70%;
+}
+.editBasicInfo1 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px;
+	box-sizing: border-box;
+	font-size: 17px;
+	font-family: 'josefin sans';
+	width: 50%;
+}
+.editBasicInfo2 {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding: 10px;
+	box-sizing: border-box;
+	font-size: 17px;
+	font-family: 'josefin sans';
+	width: 50%;
+}
+.editStatus {
+	margin-top: 20px;
+	font-family: 'josefin sans';
+	font-size: 40px;
+	text-align: center;
+	border: none;
+	border-bottom: 1px solid black;
+	outline: none;
+	max-width: 70%;
+}
+.editSkillField {
+	font-size: 20px;
+	font-family: 'josefin sans';
+	margin: 15px;
+	margin-left: 20px;
+	width: 90%;
+}
+.socialEditInpWrap {
+	display: flex;
+	align-items: center;
+}
+.editSocialInput {
+	border: none;
+	font-family: 'josefin sans';
+	font-size: 12px;
+	outline: none;
+	margin-top: 40px !important;
+	border-bottom: 1px solid black;
+}
+.editBioField {
+	margin: 20px;
+	font-family: 'josefin sans';
+	font-size: 20px;
+	border: none;
+	width: 95%;
+	height: 90%;
+	outline: none;
+}
+.editSocialIcon {
+	font-size: 20px !important;
+	margin-top: 20px;
+	margin: 10px;
+	margin-top: 30px;
+	margin-right: 0px !important;
+}
+
+.statusAligner {
+	display: flex;
+	justify-content: center;
+}
+.editInfoField {
+	margin: 20px;
+}
+
+.editSkillTitle {
+	font-size: 40px;
+	font-family: 'josefin sans';
+	margin: 20px;
+	text-align: center;
+}
+.editInput {
+	border: none;
+	border-bottom: 1px solid black;
+	outline: none;
+	font-size: 15px;
+	font-family: 'josefin sans';
+	width: 90%;
+}

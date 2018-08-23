@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Orbitron|Allerta+Stencil|Bowlby+One+SC|Audiowide');
+.App {
+	box-sizing: border-box;
+	overflow: hidden;
+}
+a:link {
+	text-decoration: inherit;
+	color: inherit;
+	cursor: auto;
+	cursor: pointer;
+}
+a:visited {
+	text-decoration: inherit;
+	color: inherit;
+	cursor: auto;
+	cursor: pointer;
+}
+#notLoggedInMsg {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	width: 100%;
+	font-family: 'Orbitron';
+	background: #ffefba; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to top, #ffffff, #ffefba); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to top, #ffffff, #ffefba);
+	color: black;
+}

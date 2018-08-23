@@ -1,0 +1,11 @@
+.profiles {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	background: #ffefba; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to top, #ffffff, #ffefba); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to top, #ffffff, #ffefba);
+	padding-top: 105px;
+	padding-bottom: 50px;
+}
