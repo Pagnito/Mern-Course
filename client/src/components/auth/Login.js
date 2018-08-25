@@ -29,7 +29,7 @@ export class Login extends Component {
 			console.log(this.props.auth);
 		}
 		if (this.props.auth.isAuthenticated === true) {
-			this.props.history.push('/dashboard');
+			this.props.history.push('/');
 		}
 	}
 	onChange = (e) => {

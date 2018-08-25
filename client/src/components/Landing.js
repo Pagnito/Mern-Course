@@ -23,7 +23,7 @@ class Landing extends Component {
 				? 'https://scontent.fbed1-1.fna.fbcdn.net/v/t1.0-9/39887089_1334760716655415_9198910557426548736_n.jpg?_nc_cat=0&oh=c80194b96da4132225b9e3590d35c5ac&oe=5BEF3FE3'
 				: nytUrl + response[article].multimedia[24].url;
 			return (
-				<div key={ind} className="article">
+				<div key={ind} className="article gridItemLanding">
 					<div
 						className="artImg"
 						style={{
@@ -45,7 +45,7 @@ class Landing extends Component {
 	}
 	renderPosts = () => {};
 	render() {
-		if (!this.props.articles || this.props.loading) {
+		if (!this.props.articles || this.props.loading || this.props.articles.length === 0) {
 			return (
 				<div id="landing-loadingContainer">
 					<div className="landing-spinner">

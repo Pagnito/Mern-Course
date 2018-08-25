@@ -62,3 +62,30 @@
 	transition: all 0.3s ease-out !important;
 	color: #efe1b1 !important;
 }
+@media (max-width: 650px) {
+	.logo-stns {
+		width: 30vw !important;
+		align-items: flex-start !important;
+	}
+	.nav-btn-stns {
+		width: 70vw !important;
+	}
+	.logged-logo {
+		font-size: 20px;
+		margin-top: 10px !important;
+	}
+	.logged-header {
+		height: 70px !important;
+	}
+	.proPic {
+		height: 35px;
+		width: 35px;
+		border-radius: 35px;
+		margin-top: 5px;
+	}
+	.userInfoo {
+		display: flex;
+		height: 45px;
+		z-index: 4;
+	}
+}

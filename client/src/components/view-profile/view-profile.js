@@ -174,6 +174,7 @@ export class ViewProfile extends Component {
 								<div className="viewProSocial">{this.renderSocialLinks()}</div>
 							</div>
 						</div>
+						<div className="viewProSocialM">{this.renderSocialLinks()}</div>
 						<div className="grid">
 							<div className="gridItem viewBio">{profile.bio}</div>
 							<div className="gridItem viewSkills">

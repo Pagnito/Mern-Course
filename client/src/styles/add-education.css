@@ -99,3 +99,21 @@
 		height: 0;
 	}
 }
+@media (max-width: 1000px) {
+	.addEducationWrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: 0px;
+		overflow: hidden;
+		background-color: transparent;
+		position: absolute;
+		width: 100%;
+		margin-top: 10px;
+		left: 0px;
+		right: 0px;
+	}
+	.addEducation {
+		width: 95%;
+	}
+}

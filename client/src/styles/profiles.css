@@ -9,3 +9,8 @@
 	padding-top: 105px;
 	padding-bottom: 50px;
 }
+@media (max-width: 650px) {
+	.profiles {
+		padding-top: 70px;
+	}
+}

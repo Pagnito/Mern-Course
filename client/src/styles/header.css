@@ -35,11 +35,44 @@ input:-webkit-autofill {
 	overflow: hidden;
 	box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.3);
 }
-@media (max-width: 550px) {
-	.logo {
-		font-size: 30px !important;
-	}
+@media (max-width: 770px) {
 	.nav-btns > ul > li {
 		font-size: 15px !important;
+	}
+}
+@media (max-width: 650px) {
+	.logo-stns {
+		width: 30vw !important;
+	}
+	.nav-btn-stns {
+		width: 70vw !important;
+	}
+	#logoLink {
+		font-size: 30px;
+	}
+	.header {
+		height: 70px !important;
+	}
+	.nav-btns > ul > li {
+		font-size: 13px !important;
+	}
+}
+@media (max-width: 550px) {
+	.logo-stns {
+		width: 30vw !important;
+		align-items: flex-start !important;
+	}
+	.nav-btn-stns {
+		width: 70vw !important;
+	}
+	#logoLink {
+		font-size: 20px;
+	}
+	.header {
+		height: 60px !important;
+	}
+	.nav-btns > ul > li {
+		font-size: 13px !important;
+		margin: 5px !important;
 	}
 }

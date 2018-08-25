@@ -66,38 +66,38 @@
 	justify-content: flex-end;
 }
 .bg-stretch-1 {
-	width: 10vw !important;
+	width: 10vw;
 }
 .bg-stretch-2 {
-	width: 20vw !important;
+	width: 20vw;
 }
 .bg-stretch-3 {
-	width: 30vw !important;
+	width: 30vw;
 }
 .bg-stretch-4 {
-	width: 40vw !important;
+	width: 40vw;
 }
 .bg-stretch-5 {
-	width: 50vw !important;
+	width: 50vw;
 }
 .bg-stretch-6 {
-	width: 60vw !important;
+	width: 60vw;
 }
 .bg-stretch-7 {
-	width: 70vw !important;
+	width: 70vw;
 }
 .bg-stretch-8 {
-	width: 80vw !important;
+	width: 80vw;
 }
 .bg-stretch-9 {
-	min-width: 90vw !important;
+	min-width: 90vw;
 }
 .bg-stretch-10 {
-	width: 100vw !important;
+	width: 100vw;
 }
 
 .no-padding {
-	padding: 0 !important;
+	padding: 0;
 }
 .fixed {
 	position: fixed;

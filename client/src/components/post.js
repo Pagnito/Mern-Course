@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PostComments from './post-comments';
 import moment from 'moment';
-import { postComment } from '../actions/post-actions';
+import { postComment, likePost, unlikePost, deletePost } from '../actions/post-actions';
 import { connect } from 'react-redux';
 class Post extends Component {
 	// eslint-disable-line react/prefer-stateless-function
@@ -16,6 +16,9 @@ class Post extends Component {
 	onChange = (e) => {
 		this.setState({ [e.target.name]: e.target.value });
 	};
+	deletePost = (id) => {
+		this.props.deletePost(id);
+	};
 	handleComment = (id) => {
 		const newComment = {
 			text: this.state.comment,
@@ -24,6 +27,15 @@ class Post extends Component {
 		};
 		this.props.postComment(newComment, id);
 		this.setState({ comment: '' });
+	};
+	likePost = (id) => {
+		if (
+			this.props.postProp.likes.filter((like) => like.userId === this.props.auth.user.id).length > 0
+		) {
+			this.props.unlikePost(id);
+		} else {
+			this.props.likePost(id);
+		}
 	};
 	showComments = () => {
 		if (this.props.postProp.comments.length > 0) {
@@ -40,12 +52,15 @@ class Post extends Component {
 	};
 	render() {
 		const post = this.props.postProp;
-		const commentsComp =
-			!post.comments.length === 0 ? (
-				''
+
+		const del =
+			this.props.postProp.userId === this.props.auth.user.id ? (
+				<i onClick={this.deletePost.bind(this, post._id)} className="far fa-trash-alt" />
 			) : (
-				<PostComments commentsProp={post.comments} auth={this.props.auth} />
+				''
 			);
+		const commentsComp =
+			!post.comments.length === 0 ? '' : <PostComments post={post} auth={this.props.auth} />;
 		return (
 			<div className="post">
 				<div className="aboutPoster">
@@ -58,7 +73,10 @@ class Post extends Component {
 					</div>
 				</div>
 				<div className="postInfo">
-					<div className="postText">{post.text}</div>
+					<div className="postTextWrap">
+						<div className="postText">{post.text}</div>
+						<div className="deletePost">{del}</div>
+					</div>
 				</div>
 				<div>
 					<div className="commentAreaWrap">
@@ -73,8 +91,12 @@ class Post extends Component {
 					</div>
 					<div className="likesSubmit">
 						<div className="likeComment">
-							<i className="margin fas fa-thumbs-up" />
-							<div className="margin">0 likes</div>
+							<i
+								id={`like${this.props.index}`}
+								onClick={this.likePost.bind(this, post._id)}
+								className="margin fas fa-thumbs-up"
+							/>
+							<div className="margin likesText">{post.likes.length} likes</div>
 							<div onClick={this.showComments} className="showCommentsBtn margin">
 								{post.comments.length} Comments
 							</div>
@@ -99,10 +121,11 @@ class Post extends Component {
 }
 function mapStateToProps(state) {
 	return {
-		post: state.posts.post
+		post: state.posts.post,
+		auth: state.auth
 	};
 }
 export default connect(
 	mapStateToProps,
-	{ postComment }
+	{ postComment, likePost, deletePost, unlikePost }
 )(Post);

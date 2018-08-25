@@ -1,0 +1,33 @@
+.feed-page {
+	padding-top: 105px;
+	width: 100% !important;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: #ffefba; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to top, #ffffff, #ffefba); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to top, #ffffff, #ffefba);
+}
+.postsList {
+	width: 60%;
+}
+@media (max-width: 850px) {
+	.feed {
+		background-color: #fff0bc;
+	}
+	.createPostForm {
+		width: 94%;
+	}
+}
+@media (max-width: 650px) {
+	.postsList {
+		width: 98%;
+	}
+	.feed-page {
+		padding-top: 80px;
+	}
+	.feed {
+		background-color: #fff0bc;
+	}
+}

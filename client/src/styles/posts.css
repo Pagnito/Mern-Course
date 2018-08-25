@@ -69,7 +69,11 @@
 .postDate {
 	color: rgba(0, 0, 0, 0.6);
 }
+.postTextWrap {
+	display: flex;
+}
 .postText {
+	width: 95%;
 	margin: 10px;
 	margin-left: 15px;
 	font-size: 25px;
@@ -83,20 +87,27 @@
 	display: flex;
 	align-items: center;
 }
+.deletePost {
+	width: 5%;
+	display: flex;
+	align-items: flex-end;
+}
 .margin {
 	margin-left: 10px;
 }
 .fa-thumbs-up {
 	font-size: 22px;
 	margin-left: 10px;
+	cursor: pointer;
 }
+
 .postCommentWrap {
 	display: flex;
 	justify-content: flex-end;
 	width: 30%;
 }
 .postComment {
-	background-color: #f9bb6d;
+	background-color: #e6bc93;
 	border: none;
 	height: 25px;
 	width: 100%;
@@ -106,6 +117,9 @@
 }
 .postComment:hover {
 	box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.5);
+}
+.postComment:active {
+	background-color: #f9bb6d;
 }
 .showCommentsBtn {
 	cursor: pointer;
@@ -245,5 +259,24 @@
 	}
 	100% {
 		height: 0px;
+	}
+}
+@media (max-width: 1100px) {
+	.posterName {
+		font-size: 20px;
+	}
+	.postText {
+		font-size: 20px;
+	}
+	.showCommentsBtn {
+		font-size: 12px;
+		margin: 5px;
+	}
+	.likesText {
+		font-size: 12px;
+		margin-left: 10px;
+	}
+	.fa-thumbs-up {
+		font-size: 15px;
 	}
 }

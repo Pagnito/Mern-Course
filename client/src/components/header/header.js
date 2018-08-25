@@ -38,7 +38,7 @@ class Header extends Component {
 									<Link to="/dashboard">Dashboard</Link>
 								</li>
 								<li>
-									<Link to="/">Home</Link>
+									<Link to="/mobileFeed">Posts</Link>
 								</li>
 								<li>
 									<Link onClick={this.logout} to="/">

@@ -107,3 +107,35 @@
 		color: #f9bb6d;
 	}
 }
+@media (max-width: 1000px) {
+	.profileItem {
+		width: 99%;
+	}
+}
+@media (max-width: 700px) {
+	.proItemInfo2 {
+		display: none;
+	}
+	.flexForStatus {
+		width: 100%;
+	}
+	.proItemAvatarWrap {
+		width: 50%;
+		margin-right: 10px;
+		margin-left: 10px;
+	}
+	.proItemName {
+		font-size: 15px;
+	}
+	.proItemStatus {
+		font-size: 27px;
+
+		margin: 10px 10px 0 10px;
+	}
+	.proItemCompany {
+		font-size: 17px;
+	}
+	.proItemField {
+		font-size: 13px;
+	}
+}

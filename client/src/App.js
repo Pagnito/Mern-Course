@@ -16,7 +16,7 @@ import CreateProfile from './components/create-profile';
 import EditProfile from './components/editProfile';
 import ViewProfile from './components/view-profile/view-profile';
 import NotFound from './components/not-found.js';
-
+import MobileFeed from './components/mobileFeed';
 import './App.css';
 import './styles/noMaze.css';
 if (localStorage.jwtToken) {
@@ -45,7 +45,7 @@ class App extends Component {
 						<Header />
 
 						<Route exact path="/" component={Landing} />
-
+						<Route exact path="/mobileFeed" component={MobileFeed} />
 						<Route exact path="/profiles" component={Profiles} />
 						<Route exact path="/not-found" component={NotFound} />
 						<Route exact path="/createProfile" component={CreateProfile} />

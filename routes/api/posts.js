@@ -39,6 +39,8 @@ router.post('/', passport.authenticate('jwt', { session: false }), async (req, r
 		.sort({ date: -1 })
 		.then((posts) => res.json(posts));
 });
+
+////delete post
 router.delete('/:id', passport.authenticate('jwt', { session: false }), async (req, res) => {
 	try {
 		const profile = await Profile.findOne({ userId: req.user.id });
@@ -60,12 +62,13 @@ router.post('/like/:id', passport.authenticate('jwt', { session: false }), async
 
 		if (post.likes.filter((like) => like.userId.toString() === req.user.id).length > 0) {
 			res.status(400).json({ error: 'Already liked' });
+		} else {
+			post.likes.push({ userId: req.user.id });
 		}
-
-		post.likes.push({ userId: req.user.id });
-
 		await post.save();
-		res.json(post);
+		Posts.find()
+			.sort({ date: -1 })
+			.then((posts) => res.json(posts));
 	} catch (err) {
 		res.status(404).json({ error: 'no post' });
 	}
@@ -81,13 +84,14 @@ router.post('/unlike/:id', passport.authenticate('jwt', { session: false }), asy
 		}
 		post.likes.map((like) => {
 			if (like.userId.toString() === req.user.id) {
-				console.log(post);
 				post.likes.splice(post.likes.indexOf(like), 1);
 			}
 		});
 
 		await post.save();
-		res.json(post);
+		Posts.find()
+			.sort({ date: -1 })
+			.then((posts) => res.json(posts));
 	} catch (err) {
 		res.status(404).json({ error: 'no post' });
 	}

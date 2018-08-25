@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { deleteComment } from '../actions/post-actions';
 import '../styles/post-comments.css';
 import moment from 'moment';
 class PostComments extends Component {
@@ -10,9 +10,22 @@ class PostComments extends Component {
 			comments: []
 		};
 	}
+	deleteComment = (postId, id) => {
+		this.props.deleteComment(postId, id);
+	};
 	render() {
-		const comments = this.props.commentsProp;
-		const commentsMapped = comments.map((comment, ind) => {
+		const post = this.props.post;
+
+		const commentsMapped = post.comments.map((comment, ind) => {
+			const delComment =
+				comment.userId === this.props.auth.user.id ? (
+					<i
+						onClick={this.deleteComment.bind(this, post._id, comment._id)}
+						className="far fa-trash-alt"
+					/>
+				) : (
+					''
+				);
 			return (
 				<div key={ind} className="commentPostForm">
 					<div className="commentPostUserWrap">
@@ -24,6 +37,7 @@ class PostComments extends Component {
 
 					<div name="commentText" className="commentPostText">
 						{comment.text}
+						{delComment}
 					</div>
 
 					<div className="commentDate">{moment(comment.date).format('MMM Do YY, h:mm')}</div>
@@ -33,5 +47,12 @@ class PostComments extends Component {
 		return <div>{commentsMapped}</div>;
 	}
 }
-
-export default PostComments;
+function mapStateToProps(state) {
+	return {
+		auth: state.auth
+	};
+}
+export default connect(
+	mapStateToProps,
+	{ deleteComment }
+)(PostComments);

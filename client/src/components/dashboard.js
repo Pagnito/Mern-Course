@@ -182,11 +182,11 @@ export class Dashboard extends Component {
 				return (
 					<div className="dashboard">
 						<div className="userInfo">
-							<div className="avatar">
+							<div className="gridItem avatar">
 								<img alt="fook u" className="avatarImg" src={this.props.auth.user.avatar} />
 								<div className="dashUserName">{this.props.profile.profile.userName}</div>
 							</div>
-							<div className="basicUserInfo">
+							<div className="gridItem basicUserInfo">
 								<div className="proStatus">{this.props.profile.profile.status}</div>
 								<div className="basicInfoFlexBox">
 									<div className="basicInfo1">
@@ -206,32 +206,32 @@ export class Dashboard extends Component {
 									</div>
 								</div>
 							</div>
-							<div className="skills">
+							<div className="gridItem skills">
 								<div className="dashSkillTitle">Skills</div>
 								{this.renderSkills()}
 							</div>
 
-							<div className="bio">
+							<div className="gridItem bio">
 								<div className="dashBioField">{this.props.profile.profile.bio}</div>
 							</div>
 						</div>
 
 						<div className="profile">
-							<div className="education">
+							<div className="gridItem education">
 								<button onClick={this.showAddEduForm} className="addEduBtn addBtn" type="button">
 									Add Education
 								</button>
 								<AddEducation />
 								<div className="eduWrap">{this.renderEducation()}</div>
 							</div>
-							<div className="experience">
+							<div className="gridItem experience">
 								<button onClick={this.showAddExpForm} className="addExpBtn addBtn" type="button">
 									Add Experience
 								</button>
 								<AddExperience />
 								<div className="expWrap">{this.renderExperience()}</div>
 							</div>
-							<div className="social">{this.renderSocialLinks()}</div>
+							<div className="gridItem social">{this.renderSocialLinks()}</div>
 						</div>
 
 						<div className="dashNavBtns">
@@ -243,7 +243,7 @@ export class Dashboard extends Component {
 									Delete Account
 								</button>
 							</div>
-							<button className="addBtn" type="button">
+							<button className="editProfileBtn addBtn" type="button">
 								<Link to="/editProfile">Edit Profile</Link>
 							</button>
 						</div>
