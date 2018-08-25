@@ -17,7 +17,7 @@ export class GitHubRepos extends Component {
 		const { clientId, clientSecret, count, sort } = this.state;
 		this.setState({ isMounted: true }, () => {
 			fetch(
-				`http://api.github.com/users/${userName}/repos?per_page=${count}&sort=${sort}&client_id=${clientId}&client_secret=${clientSecret}`
+				`https://api.github.com/users/${userName}/repos?per_page=${count}&sort=${sort}&client_id=${clientId}&client_secret=${clientSecret}`
 			)
 				.then((res) => res.json())
 				.then((data) => {
