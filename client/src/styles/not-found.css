@@ -1,0 +1,12 @@
+.notFound {
+	min-height: 100vh;
+	width: 100%;
+	padding-top: 120px;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	background: #ffefba; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to bottom, #ffffff, #ffefba); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to bottom, #ffffff, #ffefba);
+}

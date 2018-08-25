@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { isEmpty } from '../../utils/isEmpty';
-import propTypes from 'prop-types';
+
 import { Link } from 'react-router-dom';
 import '../../styles/profile-item.css';
 class ProfileItem extends Component {
@@ -10,7 +8,7 @@ class ProfileItem extends Component {
 			return Object.keys(this.props.profile.social).map((skill, ind) => {
 				if (skill === 'facebook') {
 					return (
-						<div key={ind}>
+						<div key={ind + 2}>
 							<a target="_blank" href={this.props.profile.social.facebook}>
 								<i className="fab proItemSocialIcon fa-facebook-f " />
 							</a>
@@ -19,7 +17,7 @@ class ProfileItem extends Component {
 				}
 				if (skill === 'tumblr') {
 					return (
-						<div key={ind}>
+						<div key={ind + 2}>
 							<a target="_blank" href={this.props.profile.social.tumblr}>
 								<i className="fab proItemSocialIcon fa-tumblr " />
 							</a>
@@ -28,7 +26,7 @@ class ProfileItem extends Component {
 				}
 				if (skill === 'instagram') {
 					return (
-						<div key={ind}>
+						<div key={ind + 2}>
 							<a target="_blank" href={this.props.profile.social.instagram}>
 								<i className="fab proItemSocialIcon fa-instagram " />
 							</a>
@@ -37,7 +35,7 @@ class ProfileItem extends Component {
 				}
 				if (skill === 'youtube') {
 					return (
-						<div key={ind}>
+						<div key={ind + 2}>
 							<a target="_blank" href={this.props.profile.social.youtube}>
 								<i className="fab proItemSocialIcon fa-youtube" />
 							</a>
@@ -46,7 +44,7 @@ class ProfileItem extends Component {
 				}
 				if (skill === 'twitter') {
 					return (
-						<div key={ind}>
+						<div key={ind + 2}>
 							<a target="_blank" href={this.props.profile.social.twitter}>
 								<i className="fab proItemSocialIcon fa-twitter" />
 							</a>
@@ -55,7 +53,7 @@ class ProfileItem extends Component {
 				}
 				if (skill === 'linkedIn') {
 					return (
-						<div key={ind}>
+						<div key={ind + 2}>
 							<a target="_blank" href={this.props.profile.social.linkedIn}>
 								<i className="fab proItemSocialIcon fa-linkedin-in" />
 							</a>
@@ -90,9 +88,9 @@ class ProfileItem extends Component {
 						<div className="proItemField proItemSocial">{this.renderSocialLinks()}</div>
 					</div>
 				</div>
-				<a href={profile.handle}>
-					<i class="far fa-eye" />
-				</a>
+				<Link to={`/profile/${profile.handle}`}>
+					<i className="far fa-eye" />
+				</Link>
 			</div>
 		);
 	}

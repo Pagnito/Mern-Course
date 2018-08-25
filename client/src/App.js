@@ -14,6 +14,9 @@ import Login from './components/auth/Login';
 import Dashboard from './components/dashboard';
 import CreateProfile from './components/create-profile';
 import EditProfile from './components/editProfile';
+import ViewProfile from './components/view-profile/view-profile';
+import NotFound from './components/not-found.js';
+
 import './App.css';
 import './styles/noMaze.css';
 if (localStorage.jwtToken) {
@@ -42,12 +45,15 @@ class App extends Component {
 						<Header />
 
 						<Route exact path="/" component={Landing} />
+
 						<Route exact path="/profiles" component={Profiles} />
+						<Route exact path="/not-found" component={NotFound} />
 						<Route exact path="/createProfile" component={CreateProfile} />
 						<Route exact path="/editProfile" component={EditProfile} />
 						<Route exact path="/dashboard" component={Dashboard} />
 						<Route exact path="/register" component={Register} />
 						<Route exact path="/login" component={Login} />
+						<Route exact path="/profile/:handle" component={ViewProfile} />
 						<Footer />
 					</div>
 				</BrowserRouter>

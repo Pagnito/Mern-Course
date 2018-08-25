@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import { fetchArticles } from '../actions/actions';
+import { getLandingPage } from '../actions/post-actions';
+
 import { connect } from 'react-redux';
+import Posts from './posts';
 import '../styles/landing.css';
 
 class Landing extends Component {
 	componentDidMount() {
-		if (Object.keys(this.props.articles).length == 0) {
-			this.props.fetchArticles();
-		}
+		this.props.getLandingPage();
+
 		window.scrollTo(0, 0);
 	}
 
@@ -17,7 +18,7 @@ class Landing extends Component {
 		const nytUrl = 'https://www.nytimes.com/';
 		return Object.keys(response).map((article, ind) => {
 			const snippet = document.getElementsByClassName('snippet');
-			console.log(response[article].web_url);
+
 			const imgUrl = !response[article].multimedia.length
 				? 'https://scontent.fbed1-1.fna.fbcdn.net/v/t1.0-9/39887089_1334760716655415_9198910557426548736_n.jpg?_nc_cat=0&oh=c80194b96da4132225b9e3590d35c5ac&oe=5BEF3FE3'
 				: nytUrl + response[article].multimedia[24].url;
@@ -42,8 +43,9 @@ class Landing extends Component {
 			);
 		});
 	}
+	renderPosts = () => {};
 	render() {
-		if (Object.keys(this.props.articles).length === 0) {
+		if (!this.props.articles || this.props.loading) {
 			return (
 				<div id="landing-loadingContainer">
 					<div className="landing-spinner">
@@ -56,9 +58,12 @@ class Landing extends Component {
 				</div>
 			);
 		}
-		if (this.props.articles) {
+		if (this.props.articles || this.props.posts.loading == false) {
 			return (
 				<div className="landing">
+					<div id="postsContainer">
+						<Posts />
+					</div>
 					<div id="articleContainer">{this.renderArticles()}</div>
 				</div>
 			);
@@ -67,11 +72,12 @@ class Landing extends Component {
 }
 function mapStateToProps(state) {
 	return {
-		articles: state.articles.articles,
-		auth: state.auth
+		articles: state.posts.articles,
+		auth: state.auth,
+		posts: state.posts.posts
 	};
 }
 export default connect(
 	mapStateToProps,
-	{ fetchArticles }
+	{ getLandingPage }
 )(Landing);

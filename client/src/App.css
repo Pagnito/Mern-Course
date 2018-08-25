@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Orbitron|Allerta+Stencil|Bowlby+One+SC|Audiowide');
 .App {
+	max-width: 1920px;
+
 	box-sizing: border-box;
 	overflow: hidden;
 }

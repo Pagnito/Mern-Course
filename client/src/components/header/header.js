@@ -19,7 +19,9 @@ class Header extends Component {
 					<div id="matrixPattern">{renderMatrixPattern()}</div>
 					<div className="logo-stns bg-stretch-5 hor-left vert-center logo-wrapper">
 						<div className="logged-logo">
-							<Link to="/">WeDevs</Link>
+							<Link to="/">
+								{'<'}WeDevs{'/>'}
+							</Link>
 						</div>
 					</div>
 					<div className="align-vert nav-btn-stns hor-center bg-stretch-5">
@@ -29,6 +31,9 @@ class Header extends Component {
 						</div>
 						<div className="logged-nav nav-btns hor-right">
 							<ul>
+								<li>
+									<Link to="/profiles">Devs</Link>
+								</li>
 								<li>
 									<Link to="/dashboard">Dashboard</Link>
 								</li>
@@ -52,7 +57,7 @@ class Header extends Component {
 				<div className="logo-stns bg-stretch-5 hor-left vert-center logo-wrapper">
 					<div className="logged-logo">
 						<Link id="logoLink" to="/">
-							WeDevs
+							{'<'}WeDevs{'/>'}
 						</Link>
 					</div>
 				</div>

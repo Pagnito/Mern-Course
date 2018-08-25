@@ -1,0 +1,76 @@
+.commentPostForm {
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.6);
+}
+
+.commentPostUserWrap {
+	display: flex;
+	width: 100%;
+}
+.commentAvatarWrap {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 30%;
+}
+.commentPostAvatar {
+	width: 40px;
+	height: 40px;
+	border-radius: 40px;
+	margin: 10px;
+}
+.commentPostName {
+	width: 70%;
+	font-size: 20px;
+	font-family: 'josefin sans';
+	margin: 10px;
+	display: flex;
+	align-items: center;
+}
+.commentDate {
+	color: rgba(0, 0, 0, 0.5);
+	padding: 10px;
+}
+.commentPostTextWrap {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.commentPostText {
+	border: none;
+	outline: none;
+	font-family: 'josefin sans';
+	font-size: 15px;
+	padding: 10px;
+	box-sizing: border-box;
+}
+.showComments {
+	animation: showComment 0.3s ease-in-out forwards !important;
+	overflow: scroll !important;
+	height: 400px !important;
+}
+@keyframes showComment {
+	0% {
+		height: 0px !important;
+	}
+	100% {
+		height: 400px !important;
+	}
+}
+.commentsWrap {
+	height: 0px;
+	overflow: hidden;
+}
+.hideComments {
+	animation: hideComments 0.3s ease-in-out forwards;
+	overflow: scroll !important;
+}
+@keyframes hideComments {
+	0% {
+		height: 400px;
+	}
+	100% {
+		height: 0px;
+	}
+}

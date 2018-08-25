@@ -35,16 +35,17 @@ export class Dashboard extends Component {
 	};
 	renderEducation = () => {
 		return this.props.profile.profile.education.map((edu, ind) => {
+			let current = edu.current == false ? `To ${edu.to}` : 'Currently Attending';
 			return (
 				<div key={ind} className="eduThumb">
 					<div className="schoolInfoWrap">
 						<div className="schoolInfo">
-							<span className="schoolField">{edu.school}</span>
+							<span className="schoolField school">{edu.school}</span>
 							<span className="schoolField">{edu.fieldOfStudy}</span>
 						</div>
 						<div className="schoolToFrom">
 							<span className="schoolField">From {edu.from}</span>
-							<span className="schoolField">To {edu.to}</span>
+							<span className="schoolField">{current}</span>
 						</div>
 					</div>
 					<div className="schoolDescript">{edu.description}</div>
@@ -57,16 +58,17 @@ export class Dashboard extends Component {
 	};
 	renderExperience = () => {
 		return this.props.profile.profile.experience.map((exp, ind) => {
+			let current = exp.current == false ? `To ${exp.to}` : 'Currently Working Here';
 			return (
 				<div key={ind} className="expThumb">
 					<div className="titleInfoWrap">
 						<div className="titleInfo">
-							<span className="titleField">{exp.title}</span>
-							<span className="titleField">{exp.company}</span>
+							<span className="titleField title">{exp.title}</span>
+							<span className="titleField">At{exp.company}</span>
 						</div>
 						<div className="titleToFrom">
 							<span className="titleField">From {exp.from}</span>
-							<span className="titleField">To {exp.to}</span>
+							<span className="titleField">{current}</span>
 						</div>
 					</div>
 					<div className="titleDescript">{exp.description}</div>
@@ -92,42 +94,54 @@ export class Dashboard extends Component {
 				if (skill === 'facebook') {
 					return (
 						<div key={ind}>
-							<i className="fab dashSocialIcon fa-facebook-f socialIcon" />
+							<a href={this.props.profile.profile.social.facebook} target="_blank">
+								<i className="fab dashSocialIcon fa-facebook-f socialIcon" />
+							</a>
 						</div>
 					);
 				}
 				if (skill === 'tumblr') {
 					return (
 						<div key={ind}>
-							<i className="fab dashSocialIcon fa-tumblr socialIcon" />
+							<a href={this.props.profile.profile.social.tumblr} target="_blank">
+								<i className="fab dashSocialIcon fa-tumblr socialIcon" />
+							</a>
 						</div>
 					);
 				}
 				if (skill === 'instagram') {
 					return (
 						<div key={ind}>
-							<i className="fab dashSocialIcon fa-instagram socialIcon" />
+							<a href={this.props.profile.profile.social.instagram} target="_blank">
+								<i className="fab dashSocialIcon fa-instagram socialIcon" />
+							</a>
 						</div>
 					);
 				}
 				if (skill === 'youtube') {
 					return (
 						<div key={ind}>
-							<i className="fab dashSocialIcon fa-youtube socialIcon" />
+							<a href={this.props.profile.profile.social.youtube} target="_blank">
+								<i className="fab dashSocialIcon fa-youtube socialIcon" />
+							</a>
 						</div>
 					);
 				}
 				if (skill === 'twitter') {
 					return (
 						<div key={ind}>
-							<i className="fab dashSocialIcon fa-twitter socialIcon" />
+							<a href={this.props.profile.profile.social.twitter} target="_blank">
+								<i className="fab dashSocialIcon fa-twitter socialIcon" />
+							</a>
 						</div>
 					);
 				}
 				if (skill === 'linkedIn') {
 					return (
 						<div key={ind}>
-							<i className="fab dashSocialIcon fa-linkedin-in socialIcon" />
+							<a href={this.props.profile.profile.social.linkedIn} target="_blank">
+								<i className="fab dashSocialIcon fa-linkedin-in socialIcon" />
+							</a>
 						</div>
 					);
 				}
@@ -219,7 +233,7 @@ export class Dashboard extends Component {
 							</div>
 							<div className="social">{this.renderSocialLinks()}</div>
 						</div>
-						<div className="githubRepos">h</div>
+
 						<div className="dashNavBtns">
 							<div className="dashDeleteBtns">
 								<button className="addBtn" type="button">

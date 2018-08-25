@@ -1,0 +1,249 @@
+.feed {
+	min-height: 100vh;
+	width: 100%;
+}
+
+.post {
+	font-family: 'josefin sans';
+	box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.5);
+	margin: 5px 0 5px 0;
+	display: flex;
+	flex-direction: column;
+	border-radius: 5px;
+	box-sizing: border-box;
+	background-color: #fffdf6;
+}
+.aboutPoster {
+	display: flex;
+	width: 100%;
+	background: #ffefba; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to bottom, #ffefba, #ffffff); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to bottom, #ffefba, #ffffff);
+}
+.commentArea {
+	box-shadow: 0px 1px 2px 1px inset rgba(0, 0, 0, 0.5);
+	padding: 10px;
+	box-sizing: border-box;
+	font-family: 'josefin sans';
+	font-size: 17px;
+	background-color: white;
+	border: none;
+	width: 98%;
+	min-height: 20px;
+	outline: none;
+	border-radius: 5px;
+	overflow-wrap: break-word;
+}
+.commentAreaWrap {
+	padding: 2px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+
+	box-sizing: border-box;
+}
+.postAvatarWrap {
+	width: 30%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.postAvatar {
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	margin: 10px;
+}
+.postNameDate {
+	width: 70%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.posterName {
+	margin: 10px;
+	font-size: 25px;
+	font-family: 'Bowlby One Sc';
+}
+.postDate {
+	color: rgba(0, 0, 0, 0.6);
+}
+.postText {
+	margin: 10px;
+	margin-left: 15px;
+	font-size: 25px;
+}
+.likesSubmit {
+	display: flex;
+	padding: 10px;
+}
+.likeComment {
+	width: 70%;
+	display: flex;
+	align-items: center;
+}
+.margin {
+	margin-left: 10px;
+}
+.fa-thumbs-up {
+	font-size: 22px;
+	margin-left: 10px;
+}
+.postCommentWrap {
+	display: flex;
+	justify-content: flex-end;
+	width: 30%;
+}
+.postComment {
+	background-color: #f9bb6d;
+	border: none;
+	height: 25px;
+	width: 100%;
+	font-family: 'josefin sans';
+	font-size: 15px;
+	box-shadow: 1px 0px 2px 1px rgba(0, 0, 0, 0.5);
+}
+.postComment:hover {
+	box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.5);
+}
+.showCommentsBtn {
+	cursor: pointer;
+}
+.createPostBtn {
+	width: 100%;
+	height: 40px;
+	font-size: 30px;
+	background-image: url('../imgs/addPostBg.png');
+	box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.5);
+	font-family: 'josefin sans';
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.createPostFormWrap {
+	width: 100vw;
+	height: 0px;
+	top: 0px;
+	left: 0px;
+	overflow: hidden;
+	position: absolute;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.8);
+}
+.createPostForm {
+	display: flex;
+	flex-direction: column;
+	min-height: 200px;
+	width: 40%;
+
+	background-color: white;
+}
+.createPostBtn:hover {
+	background-image: url('../imgs/addPostBgHover.png');
+	color: white;
+	cursor: pointer;
+}
+.addPostUserWrap {
+	display: flex;
+	width: 100%;
+
+	background: #ffefba; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #ffefba, #ffffff); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #ffefba, #ffffff);
+}
+.addPostAvatarWrap {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 30%;
+}
+.addPostAvatar {
+	width: 70px;
+	height: 70px;
+	border-radius: 70px;
+	margin: 10px;
+}
+.addPostName {
+	width: 70%;
+	font-size: 40px;
+	font-family: 'josefin sans';
+	margin: 10px;
+}
+.addPostTextWrap {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.addPostText {
+	height: 100px;
+	border: none;
+	outline: none;
+	font-family: 'josefin sans';
+	font-size: 15px;
+	padding: 10px;
+	box-sizing: border-box;
+}
+.addPostBtn {
+	height: 30px;
+	font-size: 20px;
+	background-color: #f9bb6d;
+	font-family: 'josefin sans';
+	border: none;
+	width: 50%;
+	outline: none;
+}
+.cancelPost {
+	background-color: #d19a55;
+}
+.postComment {
+	outline: none;
+}
+.postBtnAligner {
+	display: flex;
+}
+.addPostBtn:hover {
+	background-color: #84d8d0;
+	cursor: pointer;
+	color: white;
+}
+.cancelPost:hover {
+	background-color: #ff6060 !important;
+}
+.showPostForm {
+	animation: showForm 0.3s ease-in-out forwards;
+}
+.showComments {
+	animation: showComments 0.3s ease-in-out forwards !important;
+	overflow: scroll !important;
+}
+@keyframes showComments {
+	0% {
+		height: 0px !important;
+	}
+	100% {
+		height: 400px !important;
+	}
+}
+@keyframes showForm {
+	0% {
+		height: 0px;
+	}
+	100% {
+		height: 100%;
+	}
+}
+.hidePostForm {
+	animation: hideForm 0.3s ease-in-out forwards;
+}
+@keyframes hideForm {
+	0% {
+		height: 100%;
+	}
+	100% {
+		height: 0px;
+	}
+}

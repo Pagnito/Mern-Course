@@ -11,8 +11,8 @@ export class Developers extends Component {
 	}
 
 	renderProfiles = () => {
-		return this.props.profiles.map((profile) => {
-			return <ProfileItem profile={profile} />;
+		return this.props.profiles.map((profile, ind) => {
+			return <ProfileItem key={ind} profile={profile} />;
 		});
 	};
 	render() {

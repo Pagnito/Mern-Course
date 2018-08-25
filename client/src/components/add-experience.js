@@ -48,7 +48,7 @@ class AddExperience extends Component {
 			location: this.state.location,
 			from: this.state.from,
 			to: this.state.to,
-			current: false,
+			current: this.state.current,
 			description: this.state.description
 		};
 		this.props.addExperience(newExperience, this.hideAddExpForm);

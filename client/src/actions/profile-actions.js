@@ -9,6 +9,23 @@ import {
 	GET_PROFILES
 } from './types';
 
+export const getProfileByHandle = (handle) => (dispatch) => {
+	dispatch(setProfileLoading());
+	axios
+		.get(`/api/profile/handle/${handle}`)
+		.then((res) => {
+			dispatch({
+				type: GET_PROFILE,
+				payload: res.data
+			});
+		})
+		.catch((err) => {
+			dispatch({
+				type: GET_PROFILE,
+				payload: {}
+			});
+		});
+};
 export const getCurrentProfile = () => (dispatch) => {
 	dispatch(setProfileLoading());
 	axios

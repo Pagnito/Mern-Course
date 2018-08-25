@@ -2,7 +2,14 @@ import React, { Component } from 'react';
 //import propTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getCurrentProfile, deleteAccount, createProfile } from '../actions/profile-actions';
+import AddEducation from './add-education';
+import {
+	getCurrentProfile,
+	deleteAccount,
+	createProfile,
+	deleteEducation,
+	deleteExperience
+} from '../actions/profile-actions';
 import '../styles/dashboard.css';
 import '../styles/editProfile.css';
 import NoProfileDash from './no-profile-dash';
@@ -103,25 +110,86 @@ export class EditProfile extends Component {
 	};
 
 	renderSkills = () => {
-		const skillFields = new Array(10).fill('');
-		return this.props.profile.profile.skills.map((skill, ind) => {
-			skillFields.splice(ind, 1, skill);
-		});
-		return skillFields.map((skill, key) => {
+		if (this.props.profile.profile.skills) {
+			const skillFields = new Array(10).fill('');
+			this.props.profile.profile.skills.map((skill, ind) => {
+				skillFields.splice(ind, 1, skill);
+			});
+			return skillFields.map((skill, key) => {
+				return (
+					<input
+						id={key}
+						name="skills"
+						onChange={this.onChangeSkill}
+						value={skill}
+						key={key}
+						className="editInput editSkillField requiredField"
+						placeholder={!isEmpty(this.state.errors) ? this.state.errors.skills : ''}
+					/>
+				);
+			});
+		}
+	};
+	showAddEduForm() {
+		document.getElementById('addEdu').classList.remove('dissapear');
+		document.getElementById('addEdu').classList.add('appear');
+	}
+	showAddExpForm() {
+		document.getElementById('addExp').classList.remove('dissapear1');
+		document.getElementById('addExp').classList.add('appear1');
+	}
+	deleteEdu = (id) => {
+		this.props.deleteEducation(id);
+	};
+	deleteExp = (id) => {
+		this.props.deleteExperience(id);
+	};
+	renderEducation = () => {
+		return this.props.profile.profile.education.map((edu, ind) => {
+			let current = edu.current == false ? `To ${edu.to}` : 'Currently Attending';
 			return (
-				<input
-					id={key}
-					name="skills"
-					onChange={this.onChangeSkill}
-					value={skill}
-					key={key}
-					className="editInput editSkillField requiredField"
-					placeholder={!isEmpty(this.state.errors) ? this.state.errors.skills : ''}
-				/>
+				<div key={ind} className="eduThumb">
+					<div className="schoolInfoWrap">
+						<div className="schoolInfo">
+							<span className="schoolField school">{edu.school}</span>
+							<span className="schoolField">{edu.fieldOfStudy}</span>
+						</div>
+						<div className="schoolToFrom">
+							<span className="schoolField">From {edu.from}</span>
+							<span className="schoolField">{current}</span>
+						</div>
+					</div>
+					<div className="schoolDescript">{edu.description}</div>
+					<span onClick={this.deleteEdu.bind(this, edu._id)}>
+						<i className="fas fa-trash-alt" />
+					</span>
+				</div>
 			);
 		});
 	};
-
+	renderExperience = () => {
+		return this.props.profile.profile.experience.map((exp, ind) => {
+			let current = exp.current == false ? `To ${exp.to}` : 'Currently Working Here';
+			return (
+				<div key={ind} className="expThumb">
+					<div className="titleInfoWrap">
+						<div className="titleInfo">
+							<span className="titleField title">{exp.title}</span>
+							<span className="titleField">At {exp.company}</span>
+						</div>
+						<div className="titleToFrom">
+							<span className="titleField">From {exp.from}</span>
+							<span className="titleField">{current}</span>
+						</div>
+					</div>
+					<div className="titleDescript">{exp.description}</div>
+					<span onClick={this.deleteExp.bind(this, exp._id)}>
+						<i className="fas fa-trash-alt" />
+					</span>
+				</div>
+			);
+		});
+	};
 	deleteAccount = () => {
 		this.props.deleteAccount(this.props.history);
 	};
@@ -253,14 +321,17 @@ export class EditProfile extends Component {
 
 						<div className="profile">
 							<div className="education">
-								<button className="addEduBtn addBtn" type="button">
+								<button onClick={this.showAddEduForm} className="addEduBtn addBtn" type="button">
 									Add Education
 								</button>
+								<AddEducation />
+								<div className="eduWrap">{this.renderEducation()}</div>
 							</div>
 							<div className="experience">
-								<button className="addExpBtn addBtn" type="button">
+								<button onClick={this.showAddExpForm} className="addExpBtn addBtn" type="button">
 									Add Experience
 								</button>
+								<div className="expWrap">{this.renderExperience()}</div>
 							</div>
 							<div className="social">
 								<div className="socialEditInpWrap">
@@ -325,11 +396,7 @@ export class EditProfile extends Component {
 								</div>
 							</div>
 						</div>
-						<div className="githubRepos">
-							<button className="addRepoBtn addBtn" type="button">
-								Add GitHub Repos
-							</button>
-						</div>
+
 						<div className="dashNavBtns">
 							<div className="dashDeleteBtns">
 								<button className="addBtn" type="button">
@@ -366,5 +433,5 @@ function mapStateToProps(state) {
 }
 export default connect(
 	mapStateToProps,
-	{ getCurrentProfile, deleteAccount, createProfile }
+	{ getCurrentProfile, deleteAccount, createProfile, deleteEducation, deleteExperience }
 )(withRouter(EditProfile));

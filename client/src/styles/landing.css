@@ -26,8 +26,14 @@
 	background: -webkit-linear-gradient(to top, #ffffff, #ffefba); /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to top, #ffffff, #ffefba);
 }
+#postsContainer {
+	width: 30%;
+	padding-top: 105px;
+	padding-left: 5px;
+	min-height: 100vh;
+}
 #articleContainer {
-	width: 80%;
+	width: 70%;
 	display: grid;
 
 	padding-top: 100px;
@@ -61,13 +67,13 @@
 .headLine {
 	color: black;
 	font-family: 'josefin sans';
-	font-size: 35px;
+	font-size: 30px;
 	width: 90%;
 }
 .snippet {
 	color: gray;
 	font-family: 'josefin sans';
-	font-size: 25px;
+	font-size: 20px;
 	width: 90%;
 }
 
@@ -267,7 +273,7 @@
 	.headLine {
 		color: black;
 		font-family: 'josefin sans';
-		font-size: 30px;
+		font-size: 25px;
 		width: 90%;
 	}
 	.snippet {
@@ -281,13 +287,13 @@
 	.headLine {
 		color: black;
 		font-family: 'josefin sans';
-		font-size: 25px;
+		font-size: 20px;
 		width: 90%;
 	}
 	.snippet {
 		color: gray;
 		font-family: 'josefin sans';
-		font-size: 20px;
+		font-size: 15px;
 		width: 90%;
 	}
 }

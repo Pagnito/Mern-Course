@@ -47,7 +47,7 @@ class AddEducation extends Component {
 			degree: this.state.degree,
 			from: this.state.from,
 			to: this.state.to,
-			current: false,
+			current: this.state.current,
 			description: this.state.description
 		};
 		this.props.addEducation(newEducation, this.hideAddEduForm);

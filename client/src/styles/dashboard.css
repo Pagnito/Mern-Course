@@ -152,14 +152,7 @@
 		'e e e f f f g '
 		'e e e f f f g ';
 }
-.githubRepos {
-	top: 0px;
-	display: flex;
-	background-color: white;
-	grid-gap: 5px;
-	margin-top: 5px;
-	min-height: 300px;
-}
+
 .education {
 	grid-area: e;
 	box-sizing: border-box;
