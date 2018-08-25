@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getLandingPage } from '../actions/post-actions';
-
+import moment from 'moment';
 import { connect } from 'react-redux';
 import Posts from './posts';
 import '../styles/landing.css';
@@ -13,15 +13,13 @@ class Landing extends Component {
 	}
 
 	renderArticles() {
-		const response = this.props.articles;
-
-		const nytUrl = 'https://www.nytimes.com/';
-		return Object.keys(response).map((article, ind) => {
+		const response = this.props.articles.articles;
+		return response.map((article, ind) => {
 			const snippet = document.getElementsByClassName('snippet');
 
-			const imgUrl = !response[article].multimedia.length
+			const imgUrl = !article.urlToImage
 				? 'https://scontent.fbed1-1.fna.fbcdn.net/v/t1.0-9/39887089_1334760716655415_9198910557426548736_n.jpg?_nc_cat=0&oh=c80194b96da4132225b9e3590d35c5ac&oe=5BEF3FE3'
-				: nytUrl + response[article].multimedia[24].url;
+				: article.urlToImage;
 			return (
 				<div key={ind} className="article gridItemLanding">
 					<div
@@ -32,11 +30,13 @@ class Landing extends Component {
 					/>
 
 					<div className="articleInfo">
-						<a target="_blank" href={response[article].web_url}>
-							<div className="headLine">{response[article].headline.main}</div>
+						<div className="author">By {article.author}</div>
+						<div className="articleDate">{moment(article.publishedAt).format('MMM Do YY')}</div>
+						<a target="_blank" href={article.url}>
+							<div className="headLine">{article.title}</div>
 						</a>
-						<a target="_blank" href={response[article].web_url}>
-							<div className="snippet">{response[article].snippet}</div>
+						<a target="_blank" href={article.url}>
+							<div className="snippet">{article.description}</div>
 						</a>
 					</div>
 				</div>

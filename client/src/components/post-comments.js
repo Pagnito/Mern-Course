@@ -36,8 +36,8 @@ class PostComments extends Component {
 					</div>
 
 					<div name="commentText" className="commentPostText">
-						{comment.text}
-						{delComment}
+						<div className="commentText">{comment.text}</div>
+						<div className="commentDel">{delComment}</div>
 					</div>
 
 					<div className="commentDate">{moment(comment.date).format('MMM Do YY, h:mm')}</div>

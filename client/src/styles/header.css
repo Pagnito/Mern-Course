@@ -31,7 +31,7 @@ input:-webkit-autofill {
 	background: linear-gradient(to right, #ffefba, #ffffff);
 	height: 95px !important;
 	position: fixed;
-	top: 0px !important;
+	top: -1px !important;
 	overflow: hidden;
 	box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.3);
 }

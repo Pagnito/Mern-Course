@@ -17,7 +17,7 @@ class MobileFeed extends Component {
 		};
 	}
 	componentDidMount() {
-		this.props.getLandingPage();
+		this.props.getPosts();
 	}
 	showPostForm = () => {
 		document.getElementById('showForm').classList.remove('hidePostForm');

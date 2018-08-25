@@ -44,6 +44,16 @@
 	font-size: 15px;
 	padding: 10px;
 	box-sizing: border-box;
+	display: flex;
+}
+.commentText {
+	width: 95%;
+}
+.commentDel {
+	width: 5%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
 }
 .showComments {
 	animation: showComment 0.3s ease-in-out forwards !important;

@@ -235,14 +235,10 @@ export class Dashboard extends Component {
 						</div>
 
 						<div className="dashNavBtns">
-							<div className="dashDeleteBtns">
-								<button className="addBtn" type="button">
-									Delete Profile
-								</button>
-								<button onClick={this.deleteAccount} className=" addBtn" type="button">
-									Delete Account
-								</button>
-							</div>
+							<button onClick={this.deleteAccount} className=" addBtn" type="button">
+								Delete Account
+							</button>
+
 							<button className="editProfileBtn addBtn" type="button">
 								<Link to="/editProfile">Edit Profile</Link>
 							</button>

@@ -9,7 +9,7 @@ import {
 	GET_LANDING
 } from './types';
 
-export const getPosts = (dispatch) => {
+export const getPosts = () => (dispatch) => {
 	axios
 		.get('/api/posts')
 		.then((res) => {
@@ -127,7 +127,7 @@ export const deletePost = (id) => (dispatch) => {
 };
 
 const articleURL =
-	'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=hacker+news?&api-key=d7b017f7b6e544e4be073c19eea0e88e';
+	'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=d3cab30cd28748a382b34eddcabe75a9';
 export const getLandingPage = () => (dispatch) => {
 	dispatch(setProfileLoading());
 
@@ -136,7 +136,7 @@ export const getLandingPage = () => (dispatch) => {
 			dispatch({
 				type: GET_LANDING,
 				payload: {
-					articles: articles.data.response.docs,
+					articles: articles.data,
 					posts: posts.data
 				}
 			});

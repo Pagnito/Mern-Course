@@ -1,4 +1,5 @@
-module.exports = {
-	mongoURI: "mongodb://pagnito:bigazzbootay9@ds221292.mlab.com:21292/mern-stack-dev",
-	jwtSecret: "secret"
-};
+if (process.env.NODE_ENV === 'production') {
+	module.exports = require('./prod');
+} else {
+	module.exports = require('./dev');
+}

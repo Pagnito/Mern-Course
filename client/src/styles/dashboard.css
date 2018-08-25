@@ -140,7 +140,7 @@
 }
 .bio {
 	grid-area: d;
-
+	min-height: 150px;
 	background-color: white;
 }
 .profile {

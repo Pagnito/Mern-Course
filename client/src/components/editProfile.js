@@ -313,7 +313,7 @@ export class EditProfile extends Component {
 									name="bio"
 									onChange={this.onChange}
 									value={this.state.bio}
-									placeholder="Name"
+									placeholder="Bio"
 									className="editBioField"
 								/>
 							</div>
@@ -333,7 +333,7 @@ export class EditProfile extends Component {
 								</button>
 								<div className="expWrap">{this.renderExperience()}</div>
 							</div>
-							<div className="social">
+							<div className="social editSocial">
 								<div className="socialEditInpWrap">
 									<i className="fab editSocialIcon fa-facebook-f editSocialIcon" />
 									<input
@@ -398,15 +398,11 @@ export class EditProfile extends Component {
 						</div>
 
 						<div className="dashNavBtns">
-							<div className="dashDeleteBtns">
-								<button className="addBtn" type="button">
-									Delete Profile
-								</button>
-								<button onClick={this.deleteAccount} className=" addBtn" type="button">
-									Delete Account
-								</button>
-							</div>
-							<button onClick={this.handleSubmit} className="addBtn" type="submit">
+							<button onClick={this.deleteAccount} className="editBtn addBtn" type="button">
+								Delete Account
+							</button>
+
+							<button onClick={this.handleSubmit} className="editBtn addBtn" type="submit">
 								Done
 							</button>
 						</div>
