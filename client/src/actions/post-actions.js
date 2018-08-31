@@ -127,7 +127,7 @@ export const deletePost = id => dispatch => {
 };
 
 const articleURL =
-  "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=97956770cdd74961adbd7079b5dd6257";
+  "https://newsapi.org/v2/everything?sources=techcrunch&apiKey=97956770cdd74961adbd7079b5dd6257";
 export const getLandingPage = () => dispatch => {
   dispatch(setProfileLoading());
 

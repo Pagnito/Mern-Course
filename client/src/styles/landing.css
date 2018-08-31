@@ -82,13 +82,13 @@
 .headLine {
   color: black;
   font-family: "josefin sans";
-  font-size: 30px;
+  font-size: 25px;
   width: 90%;
 }
 .snippet {
   color: gray;
   font-family: "josefin sans";
-  font-size: 20px;
+  font-size: 17px;
   width: 90%;
 }
 
@@ -341,5 +341,52 @@
 @media (max-width: 650px) {
   #articleContainer {
     padding-top: 70px;
+  }
+  .headLine {
+    color: black;
+    font-family: "josefin sans";
+    font-size: 20px;
+    width: 90%;
+  }
+  .snippet {
+    color: gray;
+    font-family: "josefin sans";
+    font-size: 15px;
+    width: 90%;
+  }
+  #articleContainer {
+    display: grid;
+
+    box-sizing: border-box;
+    grid-template-columns: repeat(10, 10%);
+    grid-template-rows: repeat(19, 200px);
+    grid-template-areas:
+      "a a a a a a a a a a"
+      "a a a a a a a a a a"
+      "b b b b b b b b b b"
+      "b b b b b b b b b b"
+      "d d d d d d d d d d"
+      "d d d d d d d d d d"
+      "c c c c c c c c c c"
+      "c c c c c c c c c c"
+      "c c c c c c c c c c"
+      "e e e e e e e e e e"
+      "e e e e e e e e e e"
+      "f f f f f g g g g g"
+      "f f f f f g g g g g"
+      "f f f f f g g g g g"
+      "h h h h h h h h h h"
+      "h h h h h h h h h h"
+      "j j j j j k k k k k"
+      "j j j j j k k k k k"
+      "j j j j j k k k k k";
+
+    margin-right: 5px;
+    box-sizing: border-box;
+  }
+}
+@media (max-width: 550px) {
+  #articleContainer {
+    padding-top: 60px;
   }
 }
