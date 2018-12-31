@@ -1,2 +1,2 @@
 # Mern-Course
-My first full stack app
+Project for MERN stack course
